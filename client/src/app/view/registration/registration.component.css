@@ -1,0 +1,142 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono");
+
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+/* height: 770px; */
+margin-top: auto;
+margin-bottom: auto;
+width: 1100px;
+background-color: rgb(253, 253, 253) !important;
+}
+
+.card-header h6{
+color: black;
+justify-content: center;
+text-align: center;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: rgb(54, 212, 67);
+color: black;
+border:0 !important;
+}
+
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.logo{
+    height: 130px;
+    width: 400px;
+}
+
+.login_btn{
+color: black;
+background-color: rgb(54, 212, 67);
+width: 100px;
+}
+
+.login_btn:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(35, 90, 25);
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.login-box, .register-box {
+    width: 1100px;
+    margin: 1% auto;
+}.login-page, .register-page {
+    background: #d2d6de;
+}
+
+.login-logo, .register-logo {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}.login-box-msg, .register-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}.login-box-body, .register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}.has-feedback {
+    position: relative;
+}
+.form-group {
+    margin-bottom: 15px;
+}.has-feedback .form-control {
+    padding-right: 42.5px;
+}.login-box-body .form-control-feedback, .register-box-body .form-control-feedback {
+    color: #777;
+}
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.register {
+    color: rgb(54, 212, 67);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.register:hover {
+    color: rgb(32, 151, 62);
+    cursor: pointer;
+}
+
+ ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: rgb(54, 212, 67); 
+ }

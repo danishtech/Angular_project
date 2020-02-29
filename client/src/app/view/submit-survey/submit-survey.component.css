@@ -1,0 +1,94 @@
+.main{
+    background-color: rgb(235, 235, 235);
+    align-content: center;
+    height: auto;
+}
+
+.container{
+margin-top: auto;
+margin-bottom: auto;
+}
+
+.card{
+/* height: 770px; */
+margin-top: auto;
+margin-bottom: auto;
+width: 1100px;
+background-color: rgb(253, 253, 253) !important;
+}
+
+.card-header h6{
+color: black;
+justify-content: center;
+text-align: center;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: rgb(54, 212, 67);
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+
+.post{
+    position: relative;
+}
+
+/* .description1{ 
+    font-size: 11px;
+} */
+
+.username {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -1px;
+}
+.description {
+    color: #474747;
+    font-size: 13px;
+    margin-top: -3px;
+}
+
+.row{
+    width:102%;
+    margin-left: 1px;
+}
+
+.survey-qa{
+border-bottom: 1px solid #ccc;
+margin: 0 0 13px 0;
+}
+
+.type-section1{
+    display: block;
+}
+.type-section1 div{
+    margin: 0 6px 0 12px;
+}
+.type-section1 label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 300;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;border-color:#80bd46 !important;
+        background-color: #80bd46 !important;
+    box-shadow: none;
+}
+
+.button-edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button-edit button{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 10px; 
+    margin: 0 4px 0 4px;
+}

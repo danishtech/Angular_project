@@ -1,0 +1,247 @@
+<mat-divider></mat-divider>
+<div class="main">
+    <div class="container">
+        <br>
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h2>My Approved Events</h2>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right" style="background-color: rgb(235, 235, 235)">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">My Approved Events</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Default box -->
+        <div class="card">
+
+            <div class="card-header">
+                <h6 class="card-title">My Approved Events</h6>
+
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 order-2 order-md-1">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- <h4>Recent Activity</h4> -->
+                                <div class="post" *ngFor="let event of Events">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="../../../assets/user1-128x128.jpg"
+                                            alt="user image">
+                                        <span class="username">
+                                            <a class="eventTitle" (click)="eventDetail('0')">{{event.EventName}} </a>
+                                        </span>
+
+                                        <span class="description"> created on -
+                                            {{event.CreatedDate | date:'medium'}}</span>
+                                        <div class="ribbon-wrapper ribbon-lg">
+                                            <div class="ribbon bg-danger text-sm">
+                                                Live Now
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <br>
+
+                                    <p style="color: rgb(97, 96, 96);">
+                                        {{event.EventDescription}}
+                                    </p>
+
+                                    <p style="color: rgb(97, 96, 96);">Venue: {{event.EventVenue}}</p>
+                                    <p class="formLink">
+                                        <i class="fas fa-link mr-1"></i> <b>{{event.EventStartDate | date:'medium'}}</b>
+                                        From <b>10:00 to
+                                            16:30</b>
+                                    </p>
+                                    <div class="progress col-sm-4">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="40"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span>40/100 completed</span>
+                                        </div>
+                                    </div>
+                                    <p><a href="#" class="link-black text-sm"><u>Get Spectator Survey Link</u></a>
+
+                                        <button type="button" class="btn btn-danger float-right"
+                                            routerLink="/submit-survey">Submit Organizer
+                                            Survey</button>
+                                        <button type="button" class="btn btn-info float-right"
+                                            style="margin-right: 5px;" routerLink="/submit-survey">View Spectator Survey</button>
+                                        <button type="button" class="btn btn-warning float-right"
+                                            routerLink="/submit-survey" style="margin-right: 5px;">Submit Media
+                                            Survey</button>
+                                    </p>
+
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                    <br>
+
+                                </div>
+
+                                <br>
+                                <mat-divider></mat-divider>
+                                <br>
+
+                                <div class="post clearfix">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="../../../assets/user1-128x128.jpg"
+                                            alt="user image">
+                                        <span class="username">
+                                            <a class="eventTitle" (click)="eventDetail('1')">Testing event title </a>
+
+                                        </span>
+
+                                        <span class="description"> created on - 7:45 PM today</span>
+                                        <div class="ribbon-wrapper ribbon-lg">
+                                            <div class="ribbon bg-primary text-sm">
+                                                Upcoming
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <br>
+                                    <p style="color: rgb(97, 96, 96);">
+                                        Lorem ipsum represents a long-held tradition for designers,
+                                        typographers and the like. Some people hate it and argue for
+                                        its demise, but others ignore.
+                                    </p>
+
+                                    <p style="color: rgb(97, 96, 96);">Venue: Test venue, Dubai</p>
+                                    <p class="formLink">
+                                        <i class="fas fa-link mr-1"></i> <b>Saturday 30-Aug-2014</b> Form <b>10:00 to
+                                            16:30</b>
+                                    </p>
+                                    <div class="progress col-sm-4">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                            <span>00/100 completed</span>
+                                        </div>
+                                    </div>
+                                    <p><a href="#" class="link-black text-sm"><u>Get Spectator Survey Link</u></a>
+
+                                        <button type="button" class="btn btn-secondary disabled float-right">Submit
+                                            Organizer Survey</button>
+                                        <button type="button" class="btn btn-secondary disabled float-right"
+                                            style="margin-right: 5px;">View Spectator Survey</button>
+                                    </p>
+                                </div>
+
+                                <br>
+                                <mat-divider></mat-divider>
+                                <br>
+
+                                <div class="post clearfix">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="../../../assets/user1-128x128.jpg"
+                                            alt="user image">
+                                        <span class="username">
+                                            <a class="eventTitle" (click)="eventDetail('2')">Testing event title </a>
+
+                                        </span>
+
+                                        <span class="description"> created on - 7:45 PM today</span>
+                                        <div class="ribbon-wrapper ribbon-lg">
+                                            <div class="ribbon bg-success text-sm">
+                                                Completed
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <br>
+                                    <p style="color: rgb(97, 96, 96);">
+                                        Lorem ipsum represents a long-held tradition for designers,
+                                        typographers and the like. Some people hate it and argue for
+                                        its demise, but others ignore.
+                                    </p>
+
+                                    <p style="color: rgb(97, 96, 96);">Venue: Test venue, Dubai</p>
+                                    <p class="text-sm">
+                                        <i class="fas fa-link mr-1"></i> <b>Saturday 30-Aug-2014</b> Form <b>10:00 to
+                                            16:30</b>
+                                    </p>
+
+                                    <div class="progress col-sm-4">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            <span>40/40 completed</span>
+                                        </div>
+                                    </div>
+                                    <p class="link-black">Spectator Survey Status</p>
+
+
+                                    <button type="button" class="btn btn-success float-right"
+                                        routerLink="/completed-survey">View Organizer
+                                        Survey</button>
+                                    <button type="button" class="btn btn-success float-right"
+                                        style="margin-right: 5px;">View Spectator Survey</button>
+
+                                </div>
+
+                                <br>
+                                <mat-divider></mat-divider>
+                                <br>
+
+                                <div class="post clearfix">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="../../../assets/user1-128x128.jpg"
+                                            alt="user image">
+                                        <span class="username">
+                                            <a class="eventTitle" (click)="eventDetail('2')">Testing event title </a>
+
+                                        </span>
+
+                                        <span class="description"> created on - 7:45 PM today</span>
+                                        <div class="ribbon-wrapper ribbon-lg">
+                                            <div class="ribbon bg-success text-sm">
+                                                Completed
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.user-block -->
+                                    <br>
+                                    <p style="color: rgb(97, 96, 96);">
+                                        Lorem ipsum represents a long-held tradition for designers,
+                                        typographers and the like. Some people hate it and argue for
+                                        its demise, but others ignore.
+                                    </p>
+
+                                    <p style="color: rgb(97, 96, 96);">Venue: Test venue, Dubai</p>
+                                    <p class="text-sm">
+                                        <i class="fas fa-link mr-1"></i> <b>Saturday 30-Aug-2014</b> Form <b>10:00 to
+                                            16:30</b>
+                                    </p>
+
+                                    <div class="progress col-sm-4">
+                                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            <span>100/100 completed</span>
+                                        </div>
+                                    </div>
+                                    <p class="link-black">Spectator Survey Status</p>
+
+                                    <button type="button" class="btn btn-success float-right">View Organizer
+                                        Survey</button>
+                                    <button type="button" class="btn btn-success float-right"
+                                        routerLink="/completed-survey" style="margin-right: 5px;">View Spectator
+                                        Survey</button>
+
+                                    <!-- </p> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+
+        <!-- /.card -->
+    </div>
+</div>

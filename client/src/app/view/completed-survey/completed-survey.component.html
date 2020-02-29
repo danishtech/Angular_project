@@ -1,0 +1,200 @@
+<mat-divider></mat-divider>
+<div class="main">
+    <div class="container">
+        <br>
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h2>Submit Survey</h2>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right" style="background-color: rgb(235, 235, 235)">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Servey</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <ng-container *ngIf="submitPage === 'A'">
+                                    <h4>Step 1 of 5, Event Development</h4>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                    <br>
+                                    <div class="post clearfix profile-section">
+                                        <div class="user-block" *ngFor="let category of categories; let i = index">
+                                            <div class="survey-qa" *ngIf="category.CategoryName == 'Event Development'">
+                                                <p style="color: rgb(88, 88, 88);"><b><em>{{i+1}}. {{category.Question}}</em></b>
+                                                </p>
+                                                <div class="input-group mb-3 type-section1">
+                                                    <p><b class="text-lg">{{category.Answers}}</b>
+                                                        <span class="grntxt-color">(options Selected)</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-edit">
+                                        <button type="button" (click)="nextStep('B')"
+                                            class="btn btn-info btn-xs ">Proceed to Step 2</button>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="submitPage === 'B'">
+                                    <h4>Step 2 of 5, Economic Development</h4>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                    <br>
+                                    <div class="post clearfix profile-section">
+                                        <div class="user-block" *ngFor="let category of categories; let i = index">
+                                            <div class="survey-qa"
+                                                *ngIf="category.CategoryName == 'Economic Development'">
+                                                <p style="color: rgb(88, 88, 88);"><b><em>{{i+1}}. {{category.Question}}</em></b>
+                                                </p>
+                                                <div class="input-group mb-3 type-section1">
+                                                    <p><b class="text-lg">{{category.Answers}}</b>
+                                                        <span class="grntxt-color">(options Selected)</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-edit">
+                                        <button type="button" (click)="nextStep('A')"
+                                            class="btn btn-secondary btn-xs ">Back to Step 1</button>
+                                        <button type="button" (click)="nextStep('C')"
+                                            class="btn btn-info btn-xs ">Proceed to Step 3</button>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="submitPage === 'C'">
+                                    <h4>Step 3 of 5, Sports Development</h4>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                    <br>
+                                    <div class="post clearfix profile-section">
+                                        <div class="user-block" *ngFor="let category of categories; let i = index">
+                                            <div class="survey-qa"
+                                                *ngIf="category.CategoryName == 'Sports Development'">
+                                                <p style="color: rgb(88, 88, 88);"><b><em>{{i+1}}. {{category.Question}}</em></b>
+                                                </p>
+                                                <div class="input-group mb-3 type-section1">
+                                                    <p><b class="text-lg">{{category.Answers}}</b>
+                                                        <span class="grntxt-color">(options Selected)</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-edit">
+                                        <button type="button" (click)="nextStep('B')"
+                                            class="btn btn-secondary btn-xs ">Back to Step 2</button>
+                                        <button type="button" (click)="nextStep('D')"
+                                            class="btn btn-info btn-xs ">Proceed to Step 4</button>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="submitPage === 'D'">
+                                    <h4>Step 4 of 5, Social Development</h4>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                    <br>
+                                    <div class="post clearfix profile-section">
+                                        <div class="user-block" *ngFor="let category of categories; let i = index">
+                                            <div class="survey-qa" *ngIf="category.CategoryName == 'Social Development'">
+                                                <p style="color: rgb(88, 88, 88);"><b><em>{{i+1}}. {{category.Question}}</em></b>
+                                                </p>
+                                                <div class="input-group mb-3 type-section1">
+                                                    <p><b class="text-lg">{{category.Answers}}</b>
+                                                        <span class="grntxt-color">(options Selected)</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-edit">
+                                        <button type="button" (click)="nextStep('C')"
+                                            class="btn btn-secondary btn-xs ">Back to Step 3</button>
+                                        <button type="button" (click)="nextStep('E')"
+                                            class="btn btn-info btn-xs ">Proceed to Step 5</button>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="submitPage === 'E'">
+                                    <h4>Step 5 of 5, Branding Development</h4>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                    <br>
+                                    <div class="post clearfix profile-section">
+                                        <div class="user-block" *ngFor="let category of categories; let i = index">
+                                            <div class="survey-qa" *ngIf="category.CategoryName == 'Branding Development'">
+                                                <p style="color: rgb(88, 88, 88);"><b><em>{{i+1}}. {{category.Question}}</em></b></p>
+                                                <div class="input-group mb-3 type-section1">
+                                                    <p><b class="text-lg">{{category.Answers}}</b>
+                                                        <span class="grntxt-color">(options Selected)</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-edit">
+                                        <button type="button" (click)="nextStep('D')"
+                                            class="btn btn-secondary btn-xs ">Back to Step 4</button>
+                                        <button type="button" (click)="nextStep('A')"
+                                            class="btn btn-info btn-xs ">Submit Servey</button>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
+                        <h3 class="text-primary"><i class="fas fa-paint-brush"></i> Event info</h3>
+                        <h5>Testing event title</h5>
+                        <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
+                            tofu
+                            stumptown aliqua butcher </p>
+                        <div class="text-muted">
+                            <p class="text-sm">Client Company
+                                <b class="d-block">Deveint Inc</b>
+                            </p>
+                            <p class="text-sm">Project Leader
+                                <b class="d-block">Tony Chicken</b>
+                            </p>
+                        </div>
+
+                        <h5 class="mt-5 text-muted">Day 1</h5>
+                        <p class="text-muted">Venue: Test venue, Dubai <br>
+                            <span class="text-sm text-muted">
+                                <b>Saturday 30-Aug-2014</b> Form <b>10:00 to 16:30</b></span></p>
+                        <ul class="list-unstyled">
+                            <li class="text-muted">
+                                <b>Event Budget:</b> 150000.00
+                            </li>
+                            <li class="text-muted">
+                                <b>Event Type:</b> Charity
+                            </li>
+                            <li class="text-muted">
+                                <b>Event Frequency:</b> 150000.00
+                            </li>
+                            <li class="text-muted">
+                                <b>Estimated No. of spectators :</b> 12000
+                            </li>
+                            <li class="text-muted">
+                                <b>Estimated No. of Participants :</b> 250
+                            </li>
+                        </ul>
+
+                        <ul class="list-unstyled">
+                            <li class="text-muted">
+                                <b>Event Coordinator:</b> Test
+                            </li>
+                            <li class="text-muted">
+                                <b>Email:</b> test@test.com
+                            </li>
+                            <li class="text-muted">
+                                <b>Mobile:</b> 9874566321
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

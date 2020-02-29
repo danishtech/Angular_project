@@ -1,0 +1,75 @@
+
+ /* @import "plugins/select2/css/select2.min.css"; */
+ /* href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"> */
+
+.main{
+    background-color: rgb(235, 235, 235);
+    align-content: center;
+    height: 100%;
+}
+
+.container{
+/* height: 100%;
+background-color: white; */
+margin-top: auto;
+margin-bottom: auto;
+}
+
+.card{
+/* height: 770px; */
+margin-top: auto;
+margin-bottom: auto;
+width: 1100px;
+background-color: rgb(253, 253, 253) !important;
+}
+
+.card-header h6{
+color: black;
+justify-content: center;
+text-align: center;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: rgb(54, 212, 67);
+color: black;
+border:0 !important;
+}
+
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: rgb(54, 212, 67);
+width: 100px;
+}
+
+.login_btn:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(35, 90, 25);
+}
+
+ ::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color: rgb(54, 212, 67); 
+ }
+
+.spacer {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,549 @@
+<div class="login-box">
+    <div class="login-logo">
+        <a><img class="logo" src="../../../assets/logo.png" alt="My Ad Cubes"></a>
+    </div><!-- /.login-logo -->
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h6>Register a new membership</h6>
+            </div>
+            <div class="card-body">
+                <mat-horizontal-stepper labelPosition="bottom" #stepper>
+                    <mat-step [stepControl]="firstFormGroup">
+                        <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel>Step 1</ng-template>
+                            <h3 style="font-weight: 800;">Personal Info</h3>
+                            <form>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="First name">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Middle name">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Last name">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-user"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-envelope"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Password">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Retype password">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="tel" class="form-control" placeholder="Mobile Number">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-mobile-alt"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3 type-section">
+                                    Registration Type :
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="customRadio1"
+                                            name="customRadio" style="margin-left: 5px;" (click)="onChanged('id01')"
+                                            checked>
+                                        <label for="customRadio1" class="custom-control-label"
+                                            style="margin-left: 10px; margin-right: 10px;"
+                                            (click)="onChanged('id01')">Private Sector </label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="customRadio2"
+                                            name="customRadio" style="margin-left: 5px;" (click)="onChanged('id02')"
+                                            checked>
+                                        <label for="customRadio2" class="custom-control-label"
+                                            style="margin-left: 10px; margin-right: 10px;"
+                                            (click)="onChanged('id02')">Public Sector </label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="customRadio3"
+                                            name="customRadio" style="margin-left 5px;" (click)="onChanged('id03')"
+                                            checked>
+                                        <label for="customRadio3" class="custom-control-label"
+                                            style="margin-left: 10px; margin-right: 10px;"
+                                            (click)="onChanged('id03')">School/University </label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="d-flex justify-content-center links">
+                                    <a (click)="onLogin()" class="register"><u>I already have a membership</u></a>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" value="Next" class="btn float-right login_btn"
+                                        matStepperNext>Next</button>
+                                </div>
+                            </form>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup">
+                        <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel>Step 2</ng-template>
+                            <div *ngIf="isPrivate">
+                                <h3 style="font-weight: 800;">Entity Info</h3>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Company name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Company Address">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-address-book"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Company P. O. box">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-box-open"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control" placeholder="Company Telephone">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-tty"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Company Fax">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-fax"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Website Url">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-bookmark"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next step" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <input type="button" value="Previous" class="btn float-right login_btn" matStepperPrevious>
+                                </div> -->
+                                </form>
+                            </div>
+                            <div *ngIf="isPublic">
+                                <h3 style="font-weight: 800;">Entity Info</h3>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Entity name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Entity Address">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-address-book"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Entity P. O. box">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-box-open"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control" placeholder="Entity Telephone">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-tty"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Entity Fax">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-fax"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Entity Website">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-bookmark"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next step" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <input type="button" value="Previous" class="btn float-right login_btn" matStepperPrevious>
+                                </div> -->
+                                </form>
+                            </div>
+                            <div *ngIf="isSchool">
+                                <h3 style="font-weight: 800;">Entity Info</h3>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="School/University name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Institution Address">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-address-book"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="P. O. box Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-box-open"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control" placeholder="Telephone Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-tty"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Fax Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-fax"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="password" class="form-control" placeholder="Website">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-bookmark"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next step" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <input type="button" value="Previous" class="btn float-right login_btn" matStepperPrevious>
+                                </div> -->
+                                </form>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="thirdFormGroup">
+                        <form [formGroup]="thirdFormGroup">
+                            <ng-template matStepLabel>Step 3</ng-template>
+                            <div *ngIf="isPrivate">
+                                <h3 style="font-weight: 800;">Managing Director's Info</h3>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Managing Director Name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Email">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-envelope"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Trade License Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Trade License Issue Date">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Trade License Expiry Date">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Trade License Copy">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="icheck-primary">
+                                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                                <label for="agreeTerms" style="margin-left: 10px; margin-right: 10px;">
+                                                    I agree to the <a href="#">terms</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next step" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <input type="button" value="Previous" class="btn float-right login_btn" matStepperPrevious>
+                                </div> -->
+                                </form>
+                            </div>
+                            <div *ngIf="isPublic">
+                                <h3 style="font-weight: 800;">Managing Director's Info</h3>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="CEO President Name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Managing Director Name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-envelope"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Email Address">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="icheck-primary">
+                                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                                <label for="agreeTerms" style="margin-left: 10px; margin-right: 10px;">
+                                                    I agree to the <a href="#">terms</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next step" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <input type="button" value="Previous" class="btn float-right login_btn" matStepperPrevious>
+                                </div> -->
+                                </form>
+                            </div>
+                            <div *ngIf="isSchool">
+                                <h3 style="font-weight: 800;">Managing Director's Info</h3>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Principal/Dean Name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Principal/Dean Mobile ">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-envelope"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Principal/Dean Email">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control"
+                                            placeholder="Principal/Dean Passport Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Event Coordinator Name">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control"
+                                            placeholder="Event Coordinator Mobile Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control"
+                                            placeholder="Event Coordinator Passport Number">
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">
+                                                <span class="fas fa-mobile-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="icheck-primary">
+                                                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                                                <label for="agreeTerms" style="margin-left: 10px; margin-right: 10px;">
+                                                    I agree to the <a href="#">terms</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next step" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <input type="button" value="Previous" class="btn float-right login_btn" matStepperPrevious>
+                                </div> -->
+                                </form>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>step 4</ng-template>
+                        <h2 class="fs-title text-center">Success !</h2> <br><br>
+                        <div class="row justify-content-center">
+                            <div class="col-3 text-center"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                                    class="fit-image"> </div>
+                        </div> <br><br>
+                        <div class="row justify-content-center">
+                            <div class="col-7 text-center">
+                                <h5>Thank you for registering to Gauge. Your application will be reviewed by the Council
+                                    and you will receive an official email once it is approved.
+                                </h5>
+                            </div>
+                        </div>
+                    </mat-step>
+                </mat-horizontal-stepper>
+                <!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)"> -->
+                <!-- <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" name="username" class="form-control" placeholder="username"
+                            #username="ngModel" [(ngModel)]="usernameText" required>
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="password"
+                            #password="ngModel" [(ngModel)]="passwordText" required>
+                    </div>
+                    <div class="row align-items-center remember">
+                        <input type="checkbox">Remember Me
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn float-right login_btn">
+                    </div> -->
+                <!-- </form> -->
+            </div>
+        </div>
+    </div>
+</div>

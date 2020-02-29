@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><img style="height: 60px; width: 200px;" src="../../../assets/logo.png"></mat-toolbar>
+    <mat-toolbar><img class="profile" src="../../../assets/Ron_profile.jpg"><a
+        style="color: white; font-size: 18px;"> Ron Hubach</a></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active-list-item" style="color: white;"><i
+          class="nav-icon fas fa-tachometer-alt" style="margin-right: 5px;"></i> Dashboard</a>
+      <a mat-list-item style="color: white;" (click)="toggleMenu()"><i class="nav-icon far fa-calendar-alt"
+          style="margin-right: 5px;"></i> Events
+        <mat-icon *ngIf="!showMenu">chevron_right</mat-icon>
+        <mat-icon *ngIf="showMenu">expand_more</mat-icon>
+      </a>
+      <mat-nav-list class="sidenav-submenu" *ngIf="showMenu">
+        <a mat-list-item style="color: white;" routerLink="/approved-events"><i class="far fa-circle nav-icon" style="margin-right: 5px;"></i> Submit a New Event</a>
+        <a mat-list-item style="color: white;" routerLink="/submit-events"><i class="far fa-circle nav-icon" style="margin-right: 5px;"></i> Approved Events</a>
+        <a mat-list-item style="color: white;" routerLink="/submit-events"><i class="far fa-circle nav-icon" style="margin-right: 5px;"></i> Rejected Events</a>
+      </mat-nav-list>
+      <a mat-list-item style="color: white;" routerLink="/userProfile"><i class="nav-icon fas fa-book" style="margin-right: 5px;"></i> My
+        Profile</a>
+      <a mat-list-item style="color: white;" routerLink="/passwordChange"><i class="nav-icon fas fa-table" style="margin-right: 5px;"></i>
+        Change Password</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a class="labels" routerLink="/dashboard"><u>Home</u></a>
+      <!-- <a class="labels" routerLink="/contact"><u>Contact</u></a> -->
+      <span class="example-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon matBadge="15" matBadgeColor="warn">notification_important</mat-icon>
+      </button>
+
+      <button mat-icon-button routerLink="/login">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

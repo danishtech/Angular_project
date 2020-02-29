@@ -1,0 +1,114 @@
+<div id="container">
+    <mat-divider></mat-divider>
+
+    <br>
+    <h3 style="margin-left: 10px;">Dashboard</h3>
+
+    <br>
+
+    <mat-divider></mat-divider>
+
+    <br>
+
+    <div fxLayout="row" fxLayout.xs="c olumn" fxLayoutAlign="space-between center" fxLayoutGap="20px"
+        class="stats-cards" *ngIf="dataLoaded">
+        <mat-card fxFlex="25" class="approved_events">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title><a style="font-size: 32px;">150</a></mat-card-title>
+                <mat-card-subtitle><a style="font-size: 16px; color: white;">Approved Events</a></mat-card-subtitle>
+                <span class="spacer"></span>
+                <i class="fa fa-shopping-bag"
+                    style="margin-right: 20px; font-size: 52px; color: rgba(32, 32, 32, 0.219);"></i>
+            </mat-card-header>
+            <mat-card-content style="background-color: rgb(30, 123, 199);">
+                <p style="text-align: center; font-size: 15px; padding: 6px;" routerLink="live-events">
+                    More Info
+                    <i class="fas fa-arrow-circle-right"></i>
+                </p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card fxFlex="25" class="rejected_events">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title><a style="font-size: 32px;">53</a></mat-card-title>
+                <mat-card-subtitle><a style="font-size: 16px; color: white;">Rejected Events</a></mat-card-subtitle>
+                <span class="spacer"></span>
+                <i class="far fa-chart-bar"
+                    style="margin-right: 20px; font-size: 52px; color: rgba(32, 32, 32, 0.219);"></i>
+            </mat-card-header>
+            <mat-card-content style="background-color: rgb(184, 37, 37);">
+                <p style="text-align: center; font-size: 15px; padding: 6px;" routerLink="/complete-events">
+                    More Info
+                    <i class="fas fa-arrow-circle-right"></i>
+                </p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card fxFlex="25" class="total_events">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title><a style="font-size: 32px;">44</a></mat-card-title>
+                <mat-card-subtitle><a style="font-size: 16px; color: black;">Total Events Held</a></mat-card-subtitle>
+                <span class="spacer"></span>
+                <i class="far fa-user" style="margin-right: 20px; font-size: 52px; color: rgba(32, 32, 32, 0.219);"></i>
+            </mat-card-header>
+            <mat-card-content style="background-color: rgb(206, 163, 23);">
+                <p style="text-align: center; font-size: 15px; padding: 6px;" routerLink="/upcoming-events">
+                    More Info
+                    <i class="fas fa-arrow-circle-right"></i>
+                </p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card fxFlex="25" class="total_spectators">
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title><a style="font-size: 32px;">65</a></mat-card-title>
+                <mat-card-subtitle><a style="font-size: 16px; color: white;">Total Spectators Surveyed</a>
+                </mat-card-subtitle>
+                <span class="spacer"></span>
+                <i class="fa fa-chart-pie"
+                    style="margin-right: 20px; font-size: 52px; color: rgba(32, 32, 32, 0.219);"></i>
+            </mat-card-header>
+            <mat-card-content style="background-color: rgb(184, 37, 37);">
+                <p style="text-align: center;font-size: 15px; padding: 6px;" routerLink="/complete-events">
+                    More Info
+                    <i class="fas fa-arrow-circle-right"></i>
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <br>
+
+    <mat-divider></mat-divider>
+
+    <br>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px" class="stats-cards">
+        <mat-card fxFlex="50">
+            <mat-card-content>
+                <p style="font-size: 15px; padding: 0px 2px;">
+                    <i class="fas fa-clipboard-list"
+                        style="margin-right: 2px; font-size: 20px; color: rgba(37, 37, 37, 0.884);"></i> Recent Events
+                    and Status
+                </p>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="column" fxLayoutGap="10px">
+                <mat-card flex class="trophyEventsCards" *ngFor="let event of Events" routerLink="/submit-events">
+                    <a class="trophy" style="font-size: 16px;">{{event.EventName}} > {{event.EventVenue}} </a> <span
+                        class="badge badge-danger">Live</span>
+                </mat-card>
+            </div>
+        </mat-card>
+        <mat-card fxFlex="50" style="background-color: rgb(19, 133, 43);">
+            <mat-card-content>
+                <p style="font-size: 18px; padding: 3px;">
+                    <a style="color: antiquewhite; font-size: 16px;"> <i class="far fa-calendar-alt"></i>
+                        Upcoming Event Calendar</a>
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

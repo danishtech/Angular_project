@@ -1,0 +1,170 @@
+<div id="container">
+    <mat-divider></mat-divider>
+
+    <br>
+    <h3 style="margin-left: 10px;">Dashboard</h3>
+    <br>
+
+    <section class="col-lg-12 connectedSortable">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">Organizers Pending Approval</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+                <table class="table table-striped small">
+                    <thead>
+                        <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Organizer's Name</th>
+                            <th>Venue</th>
+                            <th>Contact Person</th>
+                            <th>Designation</th>
+                            <th>Contact No.</th>
+                            <th style="text-align: right;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let event of Events; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>Cricket Association</td>
+                            <td>{{event.EventVenue}}</td>
+                            <td>{{event.EventCordinatorName}}</td>
+                            <td>President - MCA</td>
+                            <td>{{event.EventCordinatorMobileNumber}}</td>
+                            <td class="project-actions text-right">
+
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-search">View Application
+                                    </i>
+
+                                </a>
+                                <a class="btn btn-success btn-sm" href="#">
+                                    <i class="fas fa-check">
+                                        Approve
+                                    </i>
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-close">
+                                        Reject
+                                    </i>
+                                </a>
+
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <td>2.</td>
+                            <td>Cricket Association of Bengal</td>
+                            <td>Public Society</td>
+                            <td>Mr. Abhishek Dalmia</td>
+                            <td>Board President - CAB</td>
+                            <td>+91-9846466363</td>
+                            <td class="project-actions text-right">
+
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-search">View Application
+                                    </i>
+
+                                </a>
+                                <a class="btn btn-success btn-sm" href="#">
+                                    <i class="fas fa-check">
+                                        Approve
+                                    </i>
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-close">
+                                        Reject
+                                    </i>
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Vidharbha Cricket Association</td>
+                            <td>Public Society</td>
+                            <td>Mr. Anand Jaiswal</td>
+                            <td>President</td>
+                            <td>+91-9846466363</td>
+                            <td class="project-actions text-right">
+
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-search">View Application
+                                    </i>
+
+                                </a>
+                                <a class="btn btn-success btn-sm" href="#">
+                                    <i class="fas fa-check">
+                                        Approve
+                                    </i>
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-close">
+                                        Reject
+                                    </i>
+                                </a>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Delhi Cricket Association</td>
+                            <td>Public Society</td>
+                            <td>Mr. Vinod Tihara</td>
+                            <td>Secretary</td>
+                            <td>+91-9846466363</td>
+                            <td class="project-actions text-right">
+
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-search">View Application
+                                    </i>
+
+                                </a>
+                                <a class="btn btn-success btn-sm" href="#">
+                                    <i class="fas fa-check">
+                                        Approve
+                                    </i>
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-close">
+                                        Reject
+                                    </i>
+                                </a>
+
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+        <!-- Map card -->
+        <div class="card bg-gradient-primary d-none">
+            <!--  -->
+
+            <!-- /.card-body-->
+            <div class="card-footer bg-transparent">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <div id="sparkline-1"></div>
+                        <!-- <div class="text-white">Visitors</div> -->
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                        <div id="sparkline-2"></div>
+                        <!-- <div class="text-white">Online</div> -->
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-4 text-center">
+                        <div id="sparkline-3"></div>
+                        <!-- <div class="text-white">Sales</div> -->
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+        <!-- /.card -->
+    </section>
+</div>

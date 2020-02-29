@@ -1,0 +1,296 @@
+<mat-divider></mat-divider>
+<div class="main">
+    <div class="container">
+    <br>
+    <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Submit New Event</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right" style="background-color: rgb(235, 235, 235)">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">My Approved Events</li>
+            </ol>
+          </div>
+        </div>
+    <!-- <h3 style="margin-left: 10px;">My Approved Events</h3>
+    <a style="text-align: end;">Home</a> -->
+    <!-- <br> -->
+    <!-- <mat-divider></mat-divider> -->
+    </div>
+    
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h6>Submit Your Event</h6>
+                </div>
+                <div class="card-body">
+                    <mat-horizontal-stepper labelPosition="bottom" #stepper>
+                        <mat-step [stepControl]="firstFormGroup">
+                            <form [formGroup]="firstFormGroup" (ngSubmit)="form1()" #formone="ngForm">
+                                <ng-template matStepLabel>Step 1</ng-template>
+                                <h5 style="font-weight: 800;">General Info</h5>
+                                <div class="input-group mb-3">
+                                    <input type="text" formControlName="EventName" class="form-control" placeholder="Event title" required>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <select class="form-control select2" style="width: 100%;" formControlName="EventSource">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <textarea class="form-control" rows="3" formControlName="EventDescription" placeholder="Description" required></textarea>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Upload Logo <span
+                                                    class="description1">PNG,JPG or GIF only</span></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Event Profile <span
+                                                    class="description1">PDF, DOC, PNG,JPG,GIF,PPT,TIF,XLS
+                                                    only</span></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" value="Next" class="btn float-right login_btn"
+                                        matStepperNext>Next</button>
+                                </div>
+                            </form>
+                        </mat-step>
+                        <mat-step [stepControl]="secondFormGroup">
+                            <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm">
+                                <ng-template matStepLabel>Step 2</ng-template>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h5 style="font-weight: 800;">Event Itinerary Info</h5>
+
+                                        <div class="form-group">
+                                            <label>Date and time range:</label>
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="far fa-clock"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control float-right" formControlName="EventStartDate"
+                                                    placeholder="Date and time" id="reservationtime">
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" formControlName="EventVenue" placeholder="Venue Name">
+
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Venue Address">
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Upload venue
+                                                        Documentation Document <span class="description1">PDF, DOC,
+                                                            PNG,JPG,GIF,PPT,TIF,XLS only</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="form-card">
+                                        <h5 style="font-weight: 800;">Budget Info</h5>
+
+
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" formControlName="EventBudget" placeholder="Event Budget">
+
+                                        </div>
+
+
+                                        <div class="form-group">
+
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Budget
+                                                        Breakdown <span class="description1">PDF, DOC,
+                                                            PNG,JPG,GIF,PPT,TIF,XLS only</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" value="Next" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </mat-step>
+                        <mat-step [stepControl]="thirdFormGroup">
+                            <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
+                                <ng-template matStepLabel>Step 3</ng-template>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="fs-title">Additional Event info</h2>
+
+                                        <div class="form-group">
+
+                                            <select class="form-control select2" formControlName="EventCategory" data-placeholder="Event category"
+                                                style="width: 100%;">
+                                                <!-- <option class="opone" selected="selected">Event category</option> -->
+                                                <option>Alaska</option>
+                                                <option>California</option>
+                                                <option>Delaware</option>
+                                                <option>Tennessee</option>
+                                                <option>Texas</option>
+                                                <option>Washington</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                Event type :
+                                                <div class="custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                        id="customCheckbox1" value="option1" formControlName="EventType">
+                                                    <label for="customCheckbox1" class="custom-control-label">Custom
+                                                        Checkbox</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" formControlName="EventType"
+                                                        id="customCheckbox2">
+                                                    <label for="customCheckbox2" class="custom-control-label">Custom
+                                                        Checkbox checked</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input class="custom-control-input" type="checkbox" formControlName="EventType"
+                                                        id="customCheckbox3">
+                                                    <label for="customCheckbox3" class="custom-control-label">Custom
+                                                        Checkbox disabled</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <select class="form-control select2" data-placeholder="Event Frequescy" formControlName="EventFrequency"
+                                                style="width: 100%;">
+                                                <option selected="selected">Alabama</option>
+                                                <option>Alaska</option>
+                                                <option disabled="disabled">California (disabled)</option>
+                                                <option>Delaware</option>
+                                                <option>Tennessee</option>
+                                                <option>Texas</option>
+                                                <option>Washington</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" formControlName="Estimated_Number_of_Attendees"
+                                                placeholder="Estimated No of Spectators">
+
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" formControlName="Estimated_Number_of_Participants"
+                                                placeholder="Estimated No of Participants">
+
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Add video link"><br />
+                                            <div class="description1 addsection"><a href="#">+ Add more video</a></div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Add Image
+                                                        <span class="description1"> PNG,JPG orGIF only</span></label>
+                                                </div><br>
+                                                <div class="description1 addsection"><a href="#">+ Add more image</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-card">
+                                        <h2 class="fs-title">Events Coordinators Info</h2>
+
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" formControlName="EventCordinatorName" placeholder="Name">
+
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="email" class="form-control" formControlName="EventCordinatorEmail" placeholder="Email">
+
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="tel" class="form-control" formControlName="EventCordinatorMobileNumber" placeholder="Mobile">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" value="Next" class="btn float-right login_btn"
+                                            matStepperNext>Next</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </mat-step>
+                        <mat-step>
+                        <ng-template matStepLabel>step 4</ng-template>
+                        <h2 class="fs-title text-center">Success !</h2> <br><br>
+                        <div class="row justify-content-center">
+                            <div class="col-3 text-center"> <img src="../../../assets/success.jpg"
+                                    class="fit-image"> </div>
+                        </div> <br><br>
+                        <div class="row justify-content-center">
+                            <div class="col-7 text-center">
+                                <h5>Thank you for registering your event. You will receive an email notification once the event has been approved by the Council
+                                </h5>
+                            </div>
+                        </div>
+                    </mat-step>
+                    </mat-horizontal-stepper>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
